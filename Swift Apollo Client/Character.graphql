@@ -1,0 +1,14 @@
+query Character {
+  characters(page: 1, filter:{}) {
+    results {
+      id,
+      name,
+      status,
+      species,
+      type,
+      gender,
+      image,
+      created
+    }
+  }
+}
