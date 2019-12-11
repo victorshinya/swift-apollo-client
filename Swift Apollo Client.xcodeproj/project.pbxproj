@@ -18,6 +18,7 @@
 		22C75EFF239FF38800F46ADE /* CharacterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C75EFE239FF38800F46ADE /* CharacterRowView.swift */; };
 		22C75F0223A00E3E00F46ADE /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 22C75F0123A00E3E00F46ADE /* data.json */; };
 		22C75F0623A0138100F46ADE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C75F0523A0138100F46ADE /* Data.swift */; };
+		22C75F1023A18C1A00F46ADE /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C75F0F23A18C1A00F46ADE /* WebImage.swift */; };
 		ACD2E30EFB8778D0D953D2CA /* Pods_Swift_Apollo_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFF424C660AF4152EB1DBB5 /* Pods_Swift_Apollo_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		22C75F0523A0138100F46ADE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		22C75F0723A024E800F46ADE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		22C75F0823A02A4100F46ADE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		22C75F0F23A18C1A00F46ADE /* WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
 		CDFF424C660AF4152EB1DBB5 /* Pods_Swift_Apollo_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Apollo_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC3908BE9CB56B4D66534938 /* Pods-Swift Apollo Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Apollo Client.release.xcconfig"; path = "Target Support Files/Pods-Swift Apollo Client/Pods-Swift Apollo Client.release.xcconfig"; sourceTree = "<group>"; };
 		F119178FAFA478710238B465 /* Pods-Swift Apollo Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Apollo Client.debug.xcconfig"; path = "Target Support Files/Pods-Swift Apollo Client/Pods-Swift Apollo Client.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				22C75EFC239FD7D700F46ADE /* Network.swift */,
 				22129C8D239F0684002D128D /* API.swift */,
 				22129C8C239F05B5002D128D /* schema.json */,
+				22C75F0F23A18C1A00F46ADE /* WebImage.swift */,
 				22BC8F00239EFA72002573D5 /* Resources */,
 				22BC8EFA239EFA5B002573D5 /* Info.plist */,
 				22BC8EF4239EFA5B002573D5 /* Preview Content */,
@@ -267,6 +270,7 @@
 			files = (
 				22C75F0623A0138100F46ADE /* Data.swift in Sources */,
 				22BC8EED239EFA59002573D5 /* AppDelegate.swift in Sources */,
+				22C75F1023A18C1A00F46ADE /* WebImage.swift in Sources */,
 				22BC8EEF239EFA59002573D5 /* SceneDelegate.swift in Sources */,
 				22C75EFD239FD7D700F46ADE /* Network.swift in Sources */,
 				22C75EFF239FF38800F46ADE /* CharacterRowView.swift in Sources */,

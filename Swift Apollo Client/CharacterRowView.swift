@@ -14,14 +14,20 @@ struct CharacterRowView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .center, spacing: CGFloat(16.0)) {
-                Image(uiImage: UIImage(data: try! Data(contentsOf: URL(string: character.image)!))!)
-                    .resizable()
+                WebImage(url: character.image)
                     .frame(width: 90.0, height: 90.0)
+                    .cornerRadius(16.0)
                 VStack(alignment: .leading) {
                     Text(character.name)
-                    Text(character.species)
-                    Text(character.gender)
-                    Text(character.status)
+                        .font(.system(size: 24.0))
+                        .bold()
+                    HStack {
+                        Text(character.species)
+                        Text("•")
+                        Text(character.gender)
+                        Text("•")
+                        Text(character.status)
+                    }
                 }
                 Spacer()
             }
@@ -34,7 +40,9 @@ struct CharacterRowView_Previews: PreviewProvider {
         Group {
             CharacterRowView(character: characterData[0])
             CharacterRowView(character: characterData[1])
+            CharacterRowView(character: characterData[2])
+            CharacterRowView(character: characterData[3])
         }
-        .previewLayout(.fixed(width: 300, height: 100))
+        .previewLayout(.fixed(width: 375, height: 100))
     }
 }
