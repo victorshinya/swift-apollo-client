@@ -7,8 +7,8 @@ public final class CharacterQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition =
     """
-    query Character {
-    characters(page: 1, filter: {}) {
+    query Character($page: Int!) {
+      characters(page: $page, filter: {}) {
         __typename
         results {
           __typename
@@ -27,14 +27,21 @@ public final class CharacterQuery: GraphQLQuery {
 
   public let operationName = "Character"
 
-  public init() {
+  public var page: Int
+
+  public init(page: Int) {
+    self.page = page
+  }
+
+  public var variables: GraphQLMap? {
+    return ["page": page]
   }
 
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes = ["Query"]
 
     public static let selections: [GraphQLSelection] = [
-        GraphQLField("characters", arguments: ["page": 1, "filter": [:]], type: .object(Character.selections)),
+      GraphQLField("characters", arguments: ["page": GraphQLVariable("page"), "filter": [:]], type: .object(Character.selections)),
     ]
 
     public private(set) var resultMap: ResultMap
@@ -128,9 +135,9 @@ public final class CharacterQuery: GraphQLQuery {
         }
 
         /// The id of the character.
-        public var id: GraphQLID {
+        public var id: GraphQLID? {
           get {
-            return resultMap["id"] as? GraphQLID ?? ""
+            return resultMap["id"] as? GraphQLID
           }
           set {
             resultMap.updateValue(newValue, forKey: "id")
@@ -138,9 +145,9 @@ public final class CharacterQuery: GraphQLQuery {
         }
 
         /// The name of the character.
-        public var name: String {
+        public var name: String? {
           get {
-            return resultMap["name"] as? String ?? ""
+            return resultMap["name"] as? String
           }
           set {
             resultMap.updateValue(newValue, forKey: "name")
@@ -148,9 +155,9 @@ public final class CharacterQuery: GraphQLQuery {
         }
 
         /// The status of the character ('Alive', 'Dead' or 'unknown').
-        public var status: String {
+        public var status: String? {
           get {
-            return resultMap["status"] as? String ?? ""
+            return resultMap["status"] as? String
           }
           set {
             resultMap.updateValue(newValue, forKey: "status")
@@ -158,9 +165,9 @@ public final class CharacterQuery: GraphQLQuery {
         }
 
         /// The species of the character.
-        public var species: String {
+        public var species: String? {
           get {
-            return resultMap["species"] as? String ?? ""
+            return resultMap["species"] as? String
           }
           set {
             resultMap.updateValue(newValue, forKey: "species")
@@ -168,9 +175,9 @@ public final class CharacterQuery: GraphQLQuery {
         }
 
         /// The type or subspecies of the character.
-        public var type: String {
+        public var type: String? {
           get {
-            return resultMap["type"] as? String ?? ""
+            return resultMap["type"] as? String
           }
           set {
             resultMap.updateValue(newValue, forKey: "type")
@@ -178,9 +185,9 @@ public final class CharacterQuery: GraphQLQuery {
         }
 
         /// The gender of the character ('Female', 'Male', 'Genderless' or 'unknown').
-        public var gender: String {
+        public var gender: String? {
           get {
-            return resultMap["gender"] as? String ?? ""
+            return resultMap["gender"] as? String
           }
           set {
             resultMap.updateValue(newValue, forKey: "gender")
@@ -189,9 +196,9 @@ public final class CharacterQuery: GraphQLQuery {
 
         /// Link to the character's image.
         /// All images are 300x300px and most are medium shots or portraits since they are intended to be used as avatars.
-        public var image: String {
+        public var image: String? {
           get {
-            return resultMap["image"] as? String ?? ""
+            return resultMap["image"] as? String
           }
           set {
             resultMap.updateValue(newValue, forKey: "image")
@@ -199,9 +206,9 @@ public final class CharacterQuery: GraphQLQuery {
         }
 
         /// Time at which the character was created in the database.
-        public var created: String {
+        public var created: String? {
           get {
-            return resultMap["created"] as? String ?? ""
+            return resultMap["created"] as? String
           }
           set {
             resultMap.updateValue(newValue, forKey: "created")

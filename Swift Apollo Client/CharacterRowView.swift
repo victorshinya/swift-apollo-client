@@ -14,19 +14,19 @@ struct CharacterRowView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .center, spacing: CGFloat(16.0)) {
-                WebImage(url: character.image)
+                WebImage(url: (character.image ?? ""))
                     .frame(width: 90.0, height: 90.0)
                     .cornerRadius(16.0)
                 VStack(alignment: .leading) {
-                    Text(character.name)
+                    Text(character.name ?? "")
                         .font(.system(size: 24.0))
                         .bold()
                     HStack {
-                        Text(character.species)
+                        Text(character.species ?? "")
                         Text("•")
-                        Text(character.gender)
+                        Text(character.gender ?? "")
                         Text("•")
-                        Text(character.status)
+                        Text(character.status ?? "")
                     }
                 }
                 Spacer()
