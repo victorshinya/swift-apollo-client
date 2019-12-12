@@ -10,11 +10,18 @@ import SwiftUI
 
 struct CharacterListView: View {
     @State var characterData = [CharacterQuery.Data.Character.Result]()
+    @State var page: Int = 1
     
     var body: some View {
         NavigationView {
             List(characterData) { character in
                 CharacterRowView(character: character)
+                .onAppear {
+                    if character.id! == String(self.characterData.count - 1) {
+                        self.page += 1
+                        self.loadData()
+                    }
+                }
             }
             .navigationBarTitle(Text("Rick and Morty"))
         }
@@ -22,7 +29,7 @@ struct CharacterListView: View {
     }
     
     func loadData() {
-        Network.shared.apollo.fetch(query: CharacterQuery()) { result in
+        Network.shared.apollo.fetch(query: CharacterQuery(page: page)) { result in
             switch result {
             case .success(let graphQLResult):
                 if let results = graphQLResult.data?.characters?.results {

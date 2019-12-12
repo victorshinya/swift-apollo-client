@@ -1,13 +1,13 @@
-query Character {
-  characters(page: 1, filter:{}) {
+query Character($page: Int!) {
+  characters(page: $page, filter: {}) {
     results {
-      id,
-      name,
-      status,
-      species,
-      type,
-      gender,
-      image,
+      id
+      name
+      status
+      species
+      type
+      gender
+      image
       created
     }
   }
