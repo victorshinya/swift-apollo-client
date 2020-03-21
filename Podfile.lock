@@ -1,18 +1,18 @@
 PODS:
-  - Apollo (0.20.0):
-    - Apollo/Core (= 0.20.0)
-  - Apollo/Core (0.20.0)
+  - Apollo (0.24.0):
+    - Apollo/Core (= 0.24.0)
+  - Apollo/Core (0.24.0)
 
 DEPENDENCIES:
   - Apollo (~> 0.20)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Apollo
 
 SPEC CHECKSUMS:
-  Apollo: 46b40c7023c1d49f2220a0364cdff8829674d9d3
+  Apollo: ef7cf21a5f599c98a8699243f6a9922466405669
 
-PODFILE CHECKSUM: b8806dbdc835d0fc28bc174f104d3bb9d29f0380
+PODFILE CHECKSUM: b0fbcf3ba5ba8b3fd3b68cebd75abb110d4974c7
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.9.1
