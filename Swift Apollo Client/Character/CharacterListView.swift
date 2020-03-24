@@ -15,15 +15,20 @@ struct CharacterListView: View {
     var body: some View {
         NavigationView {
             List(characterData) { character in
-                CharacterRowView(character: character)
-                .onAppear {
-                    if character.id! == String(self.characterData.count - 1) {
-                        self.page += 1
-                        self.loadData()
+                NavigationLink(destination: CharacterDetail(characterData: character)) {
+                    CharacterRowView(character: character)
+                    .onAppear {
+                        if character.id! == String(self.characterData.count - 1) {
+                            self.page += 1
+                            self.loadData()
+                        }
                     }
                 }
             }
             .navigationBarTitle(Text("Rick and Morty"))
+            .onAppear {
+                UITableView.appearance().separatorStyle = .none
+            }
         }
         .onAppear(perform: loadData)
     }
