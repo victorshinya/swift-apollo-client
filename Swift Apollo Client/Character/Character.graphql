@@ -7,6 +7,12 @@ query Character($page: Int!) {
       species
       type
       gender
+      origin {
+        name
+      }
+      location {
+        name
+      }
       image
       created
     }

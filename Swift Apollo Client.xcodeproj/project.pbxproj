@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,11 +19,12 @@
 		22C75F0223A00E3E00F46ADE /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 22C75F0123A00E3E00F46ADE /* data.json */; };
 		22C75F0623A0138100F46ADE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C75F0523A0138100F46ADE /* Data.swift */; };
 		22C75F1023A18C1A00F46ADE /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C75F0F23A18C1A00F46ADE /* WebImage.swift */; };
-		ACD2E30EFB8778D0D953D2CA /* Pods_Swift_Apollo_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFF424C660AF4152EB1DBB5 /* Pods_Swift_Apollo_Client.framework */; };
+		22C75F1623A2FAA600F46ADE /* CharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C75F1523A2FAA600F46ADE /* CharacterDetail.swift */; };
+		22DD0E252425B41900EA606B /* Character.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 22DD0E242425B41900EA606B /* Character.graphql */; };
+		66739363954C437A721568C9 /* libPods-Swift Apollo Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E4D4CD6042319251B3F5A4 /* libPods-Swift Apollo Client.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22129C8B239F045D002D128D /* Character.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Character.graphql; sourceTree = "<group>"; };
 		22129C8C239F05B5002D128D /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		22129C8D239F0684002D128D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		22BC8EE9239EFA59002573D5 /* Rick and Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick and Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,7 +42,9 @@
 		22C75F0723A024E800F46ADE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		22C75F0823A02A4100F46ADE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		22C75F0F23A18C1A00F46ADE /* WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
-		CDFF424C660AF4152EB1DBB5 /* Pods_Swift_Apollo_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Apollo_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22C75F1523A2FAA600F46ADE /* CharacterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetail.swift; sourceTree = "<group>"; };
+		22DD0E242425B41900EA606B /* Character.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Character.graphql; sourceTree = "<group>"; };
+		B3E4D4CD6042319251B3F5A4 /* libPods-Swift Apollo Client.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Swift Apollo Client.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC3908BE9CB56B4D66534938 /* Pods-Swift Apollo Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Apollo Client.release.xcconfig"; path = "Target Support Files/Pods-Swift Apollo Client/Pods-Swift Apollo Client.release.xcconfig"; sourceTree = "<group>"; };
 		F119178FAFA478710238B465 /* Pods-Swift Apollo Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Apollo Client.debug.xcconfig"; path = "Target Support Files/Pods-Swift Apollo Client/Pods-Swift Apollo Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACD2E30EFB8778D0D953D2CA /* Pods_Swift_Apollo_Client.framework in Frameworks */,
+				66739363954C437A721568C9 /* libPods-Swift Apollo Client.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,13 +86,11 @@
 			children = (
 				22BC8EEC239EFA59002573D5 /* AppDelegate.swift */,
 				22BC8EEE239EFA59002573D5 /* SceneDelegate.swift */,
-				22BC8EF0239EFA59002573D5 /* CharacterListView.swift */,
-				22C75EFE239FF38800F46ADE /* CharacterRowView.swift */,
-				22129C8B239F045D002D128D /* Character.graphql */,
+				22C75F1323A2FA3400F46ADE /* Utils */,
+				22C75F1223A2F91C00F46ADE /* Character */,
 				22C75EFC239FD7D700F46ADE /* Network.swift */,
 				22129C8D239F0684002D128D /* API.swift */,
 				22129C8C239F05B5002D128D /* schema.json */,
-				22C75F0F23A18C1A00F46ADE /* WebImage.swift */,
 				22BC8F00239EFA72002573D5 /* Resources */,
 				22BC8EFA239EFA5B002573D5 /* Info.plist */,
 				22BC8EF4239EFA5B002573D5 /* Preview Content */,
@@ -116,10 +117,37 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		22C75F1223A2F91C00F46ADE /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				22C75F1423A2FA7C00F46ADE /* Detail */,
+				22BC8EF0239EFA59002573D5 /* CharacterListView.swift */,
+				22C75EFE239FF38800F46ADE /* CharacterRowView.swift */,
+				22DD0E242425B41900EA606B /* Character.graphql */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		22C75F1323A2FA3400F46ADE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				22C75F0F23A18C1A00F46ADE /* WebImage.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		22C75F1423A2FA7C00F46ADE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				22C75F1523A2FAA600F46ADE /* CharacterDetail.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		2F9FFEDE356F7AE351AB5F2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CDFF424C660AF4152EB1DBB5 /* Pods_Swift_Apollo_Client.framework */,
+				B3E4D4CD6042319251B3F5A4 /* libPods-Swift Apollo Client.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -145,7 +173,6 @@
 				22BC8EE5239EFA59002573D5 /* Sources */,
 				22BC8EE6239EFA59002573D5 /* Frameworks */,
 				22BC8EE7239EFA59002573D5 /* Resources */,
-				F8583F5E5D2C957E7F995833 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DD0E252425B41900EA606B /* Character.graphql in Resources */,
 				22BC8EF9239EFA5B002573D5 /* LaunchScreen.storyboard in Resources */,
 				22BC8EF6239EFA5B002573D5 /* Preview Assets.xcassets in Resources */,
 				22BC8EF3239EFA5B002573D5 /* Assets.xcassets in Resources */,
@@ -244,23 +272,6 @@
 			shellPath = /bin/sh;
 			shellScript = "#SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\n#cd \"${SRCROOT}/${TARGET_NAME}\"\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://rickandmortyapi.com/graphql/\"\n";
 		};
-		F8583F5E5D2C957E7F995833 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Swift Apollo Client/Pods-Swift Apollo Client-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Swift Apollo Client/Pods-Swift Apollo Client-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swift Apollo Client/Pods-Swift Apollo Client-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -268,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C75F1623A2FAA600F46ADE /* CharacterDetail.swift in Sources */,
 				22C75F0623A0138100F46ADE /* Data.swift in Sources */,
 				22BC8EED239EFA59002573D5 /* AppDelegate.swift in Sources */,
 				22C75F1023A18C1A00F46ADE /* WebImage.swift in Sources */,

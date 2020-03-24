@@ -1,3 +1,4 @@
+// @generated
 //  This file was automatically generated and should not be edited.
 
 import Apollo
@@ -5,7 +6,7 @@ import Foundation
 
 public final class CharacterQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
-  public let operationDefinition =
+  public let operationDefinition: String =
     """
     query Character($page: Int!) {
       characters(page: $page, filter: {}) {
@@ -18,6 +19,14 @@ public final class CharacterQuery: GraphQLQuery {
           species
           type
           gender
+          origin {
+            __typename
+            name
+          }
+          location {
+            __typename
+            name
+          }
           image
           created
         }
@@ -25,7 +34,7 @@ public final class CharacterQuery: GraphQLQuery {
     }
     """
 
-  public let operationName = "Character"
+  public let operationName: String = "Character"
 
   public var page: Int
 
@@ -38,7 +47,7 @@ public final class CharacterQuery: GraphQLQuery {
   }
 
   public struct Data: GraphQLSelectionSet {
-    public static let possibleTypes = ["Query"]
+    public static let possibleTypes: [String] = ["Query"]
 
     public static let selections: [GraphQLSelection] = [
       GraphQLField("characters", arguments: ["page": GraphQLVariable("page"), "filter": [:]], type: .object(Character.selections)),
@@ -65,7 +74,7 @@ public final class CharacterQuery: GraphQLQuery {
     }
 
     public struct Character: GraphQLSelectionSet {
-      public static let possibleTypes = ["Characters"]
+      public static let possibleTypes: [String] = ["Characters"]
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
@@ -101,7 +110,7 @@ public final class CharacterQuery: GraphQLQuery {
       }
 
       public struct Result: GraphQLSelectionSet, Identifiable {
-        public static let possibleTypes = ["Character"]
+        public static let possibleTypes: [String] = ["Character"]
 
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
@@ -111,6 +120,8 @@ public final class CharacterQuery: GraphQLQuery {
           GraphQLField("species", type: .scalar(String.self)),
           GraphQLField("type", type: .scalar(String.self)),
           GraphQLField("gender", type: .scalar(String.self)),
+          GraphQLField("origin", type: .object(Origin.selections)),
+          GraphQLField("location", type: .object(Location.selections)),
           GraphQLField("image", type: .scalar(String.self)),
           GraphQLField("created", type: .scalar(String.self)),
         ]
@@ -121,8 +132,8 @@ public final class CharacterQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID? = nil, name: String? = nil, status: String? = nil, species: String? = nil, type: String? = nil, gender: String? = nil, image: String? = nil, created: String? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Character", "id": id, "name": name, "status": status, "species": species, "type": type, "gender": gender, "image": image, "created": created])
+        public init(id: GraphQLID? = nil, name: String? = nil, status: String? = nil, species: String? = nil, type: String? = nil, gender: String? = nil, origin: Origin? = nil, location: Location? = nil, image: String? = nil, created: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Character", "id": id, "name": name, "status": status, "species": species, "type": type, "gender": gender, "origin": origin.flatMap { (value: Origin) -> ResultMap in value.resultMap }, "location": location.flatMap { (value: Location) -> ResultMap in value.resultMap }, "image": image, "created": created])
         }
 
         public var __typename: String {
@@ -194,6 +205,26 @@ public final class CharacterQuery: GraphQLQuery {
           }
         }
 
+        /// The character's origin location
+        public var origin: Origin? {
+          get {
+            return (resultMap["origin"] as? ResultMap).flatMap { Origin(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "origin")
+          }
+        }
+
+        /// The character's last known location
+        public var location: Location? {
+          get {
+            return (resultMap["location"] as? ResultMap).flatMap { Location(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "location")
+          }
+        }
+
         /// Link to the character's image.
         /// All images are 300x300px and most are medium shots or portraits since they are intended to be used as avatars.
         public var image: String? {
@@ -212,6 +243,82 @@ public final class CharacterQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "created")
+          }
+        }
+
+        public struct Origin: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["Location"]
+
+          public static let selections: [GraphQLSelection] = [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("name", type: .scalar(String.self)),
+          ]
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(name: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Location", "name": name])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          /// The name of the location.
+          public var name: String? {
+            get {
+              return resultMap["name"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "name")
+            }
+          }
+        }
+
+        public struct Location: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["Location"]
+
+          public static let selections: [GraphQLSelection] = [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("name", type: .scalar(String.self)),
+          ]
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(name: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Location", "name": name])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          /// The name of the location.
+          public var name: String? {
+            get {
+              return resultMap["name"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "name")
+            }
           }
         }
       }
