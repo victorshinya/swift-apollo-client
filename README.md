@@ -1,5 +1,8 @@
 # Swift Apollo Client
 
+[![LICENSE](https://img.shields.io/github/license/victorshinya/swift-apollo-client)](https://github.com/victorshinya/swift-apollo-client/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/victorshinya/swift-apollo-client/pulls)
+
 An [Apollo Client (iOS)](https://www.apollographql.com/docs/ios/) application built with SwiftUI and [The Rick and Morty API](https://rickandmortyapi.com). Apollo is an implementation of GraphQL that creates a communication layer between your client (such as React and iOS apps) to your back-end services.
 
 <div align="center">
